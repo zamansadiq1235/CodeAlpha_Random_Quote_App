@@ -190,7 +190,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                           Text(
                             'Tap to discover a new perspective',
                             style: GoogleFonts.inter(
-                              fontSize: 12,
+                              fontSize: 12.5,
                               color: mutedColor,
                               letterSpacing: 0.3,
                             ),
@@ -284,4 +284,3 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
     );
   }
 }
-

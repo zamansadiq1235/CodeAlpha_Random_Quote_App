@@ -56,7 +56,9 @@ class NewQuoteButtonState extends State<NewQuoteButton>
           height: 58,
           decoration: BoxDecoration(
             color: widget.onTap == null
-                ? AppTheme.goldAccent.withOpacity(0.4)
+                ? AppTheme.goldAccent.withOpacity(0.5)
+                : widget.isDark
+                ? AppTheme.inkLight.withOpacity(0.9)
                 : AppTheme.inkDark,
             borderRadius: BorderRadius.circular(16),
             boxShadow: widget.onTap == null
@@ -83,8 +85,10 @@ class NewQuoteButtonState extends State<NewQuoteButton>
                 style: GoogleFonts.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
-                  color: Colors.white,
-                  letterSpacing: 2.0,
+                  color: widget.isDark
+                      ? AppTheme.inkDark.withOpacity(0.85)
+                      : AppTheme.inkLight,
+                  letterSpacing: 1.5,
                 ),
               ),
             ],
