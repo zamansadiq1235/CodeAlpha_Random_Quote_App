@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import 'viewmodels/quotes_viewmodel.dart';
+import 'views/screens/home_screen.dart';
 import 'views/screens/splash_screen.dart';
 
 void main() {
@@ -24,7 +25,7 @@ class QuoteApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => QuoteViewModel()),
-        // Add FlashcardViewModel if using the study screen
+        
       ],
       child: MaterialApp(
         title: 'Daily Wisdom',
@@ -33,7 +34,12 @@ class QuoteApp extends StatelessWidget {
           useMaterial3: true,
           colorSchemeSeed: const Color(0xFFBE9B5A),
         ),
-        home: const SplashView(),
+        initialRoute: '/',
+        routes: {
+          '/': (_) => const SplashView(),
+          '/home': (_) => const HomeView(),
+          
+        },
       ),
     );
   }
